@@ -17,12 +17,12 @@ export function DashboardOverview() {
   ]
 
   const teacherSubmissions = [
-    { name: "Ms. Johnson", class: "Class 1", status: "submitted", time: "8:30 AM" },
-    { name: "Mr. Smith", class: "Class 2", status: "submitted", time: "8:45 AM" },
-    { name: "Ms. Davis", class: "Class 3", status: "pending", time: "-" },
-    { name: "Mr. Wilson", class: "Class 4", status: "submitted", time: "9:15 AM" },
-    { name: "Ms. Brown", class: "Class 5", status: "correction", time: "8:20 AM" },
-    { name: "Mr. Taylor", class: "Class 6", status: "submitted", time: "9:00 AM" },
+    { name: "Ms. Gurpreet Kaur", class: "Class 1", status: "submitted", time: "8:30 AM" },
+    { name: "Mr. Harpreet Singh", class: "Class 2", status: "submitted", time: "8:45 AM" },
+    { name: "Ms. Navjot Kaur", class: "Class 3", status: "pending", time: "-" },
+    { name: "Mr. Manpreet Singh", class: "Class 4", status: "submitted", time: "9:15 AM" },
+    { name: "Ms. Simran Kaur", class: "Class 5", status: "correction", time: "8:20 AM" },
+    { name: "Mr. Balwinder Singh", class: "Class 6", status: "submitted", time: "9:00 AM" },
   ]
 
   const getAttendanceColor = (status: string) => {

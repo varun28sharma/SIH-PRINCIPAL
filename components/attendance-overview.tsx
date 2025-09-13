@@ -44,7 +44,7 @@ export function AttendanceOverview() {
       present: 26,
       absent: 2,
       status: "good",
-      teacher: "Ms. Johnson",
+  teacher: "Ms. Gurpreet Kaur",
       lastUpdate: "8:30 AM",
       submissions: [
         { studentName: "Alice Smith", status: "present" },
@@ -62,7 +62,7 @@ export function AttendanceOverview() {
       present: 26,
       absent: 4,
       status: "good",
-      teacher: "Mr. Smith",
+  teacher: "Mr. Harpreet Singh",
       lastUpdate: "8:45 AM",
       submissions: [
         { studentName: "Frank Miller", status: "present" },
@@ -79,7 +79,7 @@ export function AttendanceOverview() {
       present: 22,
       absent: 7,
       status: "warning",
-      teacher: "Ms. Davis",
+  teacher: "Ms. Navjot Kaur",
       lastUpdate: "Pending",
       anomaly: {
         type: "drop",
@@ -100,7 +100,7 @@ export function AttendanceOverview() {
       present: 25,
       absent: 2,
       status: "good",
-      teacher: "Mr. Wilson",
+  teacher: "Mr. Manpreet Singh",
       lastUpdate: "9:15 AM",
       submissions: [
         { studentName: "Maya Angelou", status: "present" },
@@ -116,7 +116,7 @@ export function AttendanceOverview() {
       present: 21,
       absent: 10,
       status: "poor",
-      teacher: "Ms. Brown",
+  teacher: "Ms. Simran Kaur",
       lastUpdate: "8:20 AM",
       anomaly: {
         type: "drop",
@@ -137,7 +137,7 @@ export function AttendanceOverview() {
       present: 25,
       absent: 3,
       status: "good",
-      teacher: "Mr. Taylor",
+  teacher: "Mr. Balwinder Singh",
       lastUpdate: "9:00 AM",
       submissions: [
         { studentName: "Sam Wilson", status: "present" },

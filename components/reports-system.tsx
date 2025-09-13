@@ -53,6 +53,7 @@ interface ReportFilter {
   classes: string[]
   teachers: string[]
   reportType: "summary" | "detailed" | "compliance" | "trends"
+  includeFaceCoded: boolean
 }
 
 interface ReportData {
@@ -64,6 +65,7 @@ interface ReportData {
   status: "generating" | "ready" | "shared"
   size: string
   filters: string[]
+  faceCoded?: boolean
 }
 
 export function ReportsSystem() {
@@ -75,13 +77,21 @@ export function ReportsSystem() {
     classes: [],
     teachers: [],
     reportType: "summary",
+    includeFaceCoded: true,
   })
 
   const [generatingReport, setGeneratingReport] = useState(false)
   const [selectedReport, setSelectedReport] = useState<ReportData | null>(null)
 
   const classes = ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5", "Class 6"]
-  const teachers = ["Ms. Johnson", "Mr. Smith", "Ms. Davis", "Mr. Wilson", "Ms. Brown", "Mr. Taylor"]
+  const teachers = [
+    "Ms. Gurpreet Kaur",
+    "Mr. Harpreet Singh",
+    "Ms. Navjot Kaur",
+    "Mr. Manpreet Singh",
+    "Ms. Simran Kaur",
+    "Mr. Balwinder Singh",
+  ]
 
   const [reports, setReports] = useState<ReportData[]>([
     {
@@ -92,7 +102,8 @@ export function ReportsSystem() {
       dateRange: "Nov 1-30, 2024",
       status: "ready",
       size: "2.4 MB",
-      filters: ["All Classes", "Summary View"],
+      filters: ["All Classes", "Summary View", "Face-coded"],
+      faceCoded: true,
     },
     {
       id: "2",
@@ -102,7 +113,8 @@ export function ReportsSystem() {
       dateRange: "Nov 1-30, 2024",
       status: "shared",
       size: "1.8 MB",
-      filters: ["All Teachers", "Compliance View"],
+      filters: ["All Teachers", "Compliance View", "Face-coded"],
+      faceCoded: true,
     },
     {
       id: "3",
@@ -113,6 +125,7 @@ export function ReportsSystem() {
       status: "ready",
       size: "3.1 MB",
       filters: ["All Classes", "Trends View"],
+      faceCoded: false,
     },
   ])
 
@@ -177,7 +190,9 @@ export function ReportsSystem() {
         filters.classes.length > 0 ? `${filters.classes.length} Classes` : "All Classes",
         filters.teachers.length > 0 ? `${filters.teachers.length} Teachers` : "All Teachers",
         `${filters.reportType} View`,
+        ...((filters as any).includeFaceCoded ? ["Face-coded"] : []),
       ],
+      faceCoded: (filters as any).includeFaceCoded,
     }
 
     setReports((prev) => [newReport, ...prev])
@@ -361,6 +376,16 @@ export function ReportsSystem() {
 
               {/* Generate Buttons */}
               <div className="space-y-2 pt-4">
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="faceCoded"
+                    checked={(filters as any).includeFaceCoded}
+                    onCheckedChange={(checked) =>
+                      setFilters((prev: any) => ({ ...prev, includeFaceCoded: Boolean(checked) }))
+                    }
+                  />
+                  <Label htmlFor="faceCoded" className="text-sm">Include Face-coded attendance data</Label>
+                </div>
                 <Label>Export Format</Label>
                 <div className="grid grid-cols-1 gap-2">
                   <Button
