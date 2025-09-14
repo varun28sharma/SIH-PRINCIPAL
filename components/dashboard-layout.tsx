@@ -92,7 +92,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 <Menu className="h-5 w-5" />
               </Button>
               <div className="ml-4 lg:ml-0">
-                <h2 className="text-2xl font-bold text-foreground">GOVRNMENT HIGH SECONDARY SCHOOL PATILA</h2>
+                <h2 className="text-2xl font-bold text-foreground">GOVERNMENT HIGH SECONDARY SCHOOL PATILA</h2>
                 <p className="text-sm text-muted-foreground">
                   {new Date().toLocaleDateString("en-US", {
                     weekday: "long",
